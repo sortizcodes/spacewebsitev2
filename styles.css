@@ -62,7 +62,7 @@ header {
     position: relative;
 }
 
-/* NEW NAV & DROPDOWN LOGIC START */
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -88,14 +88,14 @@ header {
 }
 
 .dropdown-container {
-    position: relative; /* Anchor for the sub-menu */
+    position: relative; 
 }
 
 .dropdown-menu {
-    display: none; /* Hide by default */
+    display: none;
     position: absolute;
-    top: 100%; /* Sits directly below the nav bar */
-    left: 0;
+    top: 100%; 
+    right: 0; 
     background: rgba(11, 13, 23, 0.95);
     border: 1px solid #870451;
     border-radius: 8px;
@@ -104,6 +104,7 @@ header {
     min-width: 180px;
     z-index: 1001;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    text-align: right; 
 }
 
 .dropdown-container:hover .dropdown-menu {
@@ -125,7 +126,6 @@ header {
     color: #00d4ff;
     background: rgba(255, 255, 255, 0.05);
 }
-/* NEW NAV & DROPDOWN LOGIC END */
 
 .stars-line {
     position: absolute;
