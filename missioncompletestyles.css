@@ -1,0 +1,118 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    height: 100vh;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Helvetica', Arial, sans-serif;
+    color: #2f61cd;
+    line-height: 1.6;
+    background-color: #090b13;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(11, 20, 40, 0.8)), 
+                      url('images/blackstars.jpg') !important;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden; 
+}
+
+.wrapper {
+    min-width: 425px;
+    max-width: 1000px;
+    margin: 0px auto;
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    overflow: auto;
+    height: 100vh;
+}
+
+header {
+    background-image: url('../images/phangsdither.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #6696fd;
+    font-size: 3rem;
+    text-align: center;
+    padding: 3rem;
+}
+
+.certificate-page {
+    text-align: center;
+}
+
+.mission-title {
+    color: #cb0505; 
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+
+.certificate-box {
+    border: 5px solid #700082; 
+    padding: 40px; 
+    border-radius: 20px; 
+    background: rgba(255, 204, 0, 0.05); 
+    margin: 40px auto;
+    max-width: 850px;
+}
+
+
+.planet-list {
+    list-style: none; 
+    padding: 0; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 15px; 
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.cert-footer {
+    margin-top: 30px;
+}
+
+.restart-link {
+    text-decoration: none;
+}
+
+.discovery-content {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.back-text {
+    color: #00d4ff;
+    font-size: 1.4rem;
+}
+
+.stars-line.complete {
+    width: 100%; 
+    background: #000000;
+}
+
+.rocket-icon.landed {
+    left: 100%;
+    transform: translateX(-20px); 
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
