@@ -27,7 +27,6 @@ body {
     overflow-x: hidden; 
 }
 
-
 .wrapper {
     min-width: 425px;
     max-width: 1000px;
@@ -37,7 +36,6 @@ body {
     overflow: auto;
     height: 100vh;
 }
-
 
 .photo-grid {
     display: grid;
