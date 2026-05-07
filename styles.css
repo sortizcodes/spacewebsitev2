@@ -8,8 +8,6 @@ html {
     box-sizing: inherit;
 }
 
-
-
 body {
     margin: 0;
     padding: 0;
@@ -50,7 +48,6 @@ header {
     padding: 3rem;
 }
 
-
 .mission-control {
     width: 100%;
     background: rgba(11, 13, 23, 0.95);
@@ -65,37 +62,16 @@ header {
     position: relative;
 }
 
-.stars-line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    background: linear-gradient(90deg, #ff15b1, #4c91ff);
-    border-radius: 2px;
-    z-index: 1;     
-    opacity: 0.5;   
-    pointer-events: none; 
-}
-
-.rocket-icon {
-    position: absolute;
-    top: -12px;
-    font-size: 20px;
-    transition: left 1s ease-in-out;
-    filter: drop-shadow(0 0 5px #fb8ccb);
-    z-index: 1002;   
-}
-
+/* NEW NAV & DROPDOWN LOGIC START */
 .nav-links {
+    list-style: none;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    list-style: none;
-    margin: 0;
+    gap: 20px;
     padding: 0;
+    margin: 0;
     position: relative; 
-    z-index: 1001;   
+    z-index: 1001;
 }
 
 .nav-item {
@@ -111,28 +87,66 @@ header {
     color: #183dc2;
 }
 
-.dropdown{
-background-color: #e3e3e3;
-padding:0;
-display:none;
-margin-top:0.5em;
+.dropdown-container {
+    position: relative; /* Anchor for the sub-menu */
 }
 
-.dropdown li{
-display: block;
-border:solid 1px #ccc;
-padding:0.5em 2em;
-margin-right:0;
+.dropdown-menu {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 100%; /* Sits directly below the nav bar */
+    left: 0;
+    background: rgba(11, 13, 23, 0.95);
+    border: 1px solid #870451;
+    border-radius: 8px;
+    padding: 10px 0;
+    list-style: none;
+    min-width: 180px;
+    z-index: 1001;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
-.main-menu li:hover{
-border:none;
+.dropdown-container:hover .dropdown-menu {
+    display: block;
 }
 
-.main-menu li:hover .dropdown{
-display:block;
+.dropdown-menu li a {
+    color: #888;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
+.dropdown-menu li a:hover {
+    color: #00d4ff;
+    background: rgba(255, 255, 255, 0.05);
+}
+/* NEW NAV & DROPDOWN LOGIC END */
+
+.stars-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #ff15b1, #4c91ff);
+    border-radius: 2px;
+    z-index: 1;    
+    opacity: 0.5;   
+    pointer-events: none; 
+}
+
+.rocket-icon {
+    position: absolute;
+    top: -12px;
+    font-size: 20px;
+    transition: left 1s ease-in-out;
+    filter: drop-shadow(0 0 5px #fb8ccb);
+    z-index: 1002;   
+}
 
 .container {
     width: 90%;
@@ -141,7 +155,6 @@ display:block;
     flex-direction: column;
     align-items: center;
     padding: 40px 0;
-    style="border: 5px solid #8102d1; padding: 40px; border-radius: 20px; background: rgba(255, 204, 0, 0.05); margin: 40px 0;"
 }
 
 .quick-facts {
@@ -159,8 +172,6 @@ display:block;
     border-radius: 15px;
     border: 1px solid #6a3674;
     flex: 0 1 280px; 
-    
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -168,13 +179,21 @@ display:block;
     text-align: center;
 }
 
-h1, h2 { font-size: 4rem; color: #fff; text-align: center; margin-bottom: 10px;
+h1, h2 { 
+    font-size: 4rem; 
+    color: #fff; 
+    text-align: center; 
+    margin-bottom: 10px;
     font-family: 'IM Fell Great Primer', serif;
     font-weight: 400;
 }
-p { font-size: 2rem; text-align: center; max-width: 800px;font-family: 'Montserrat', sans-serif; }
 
-
+p { 
+    font-size: 2rem; 
+    text-align: center; 
+    max-width: 800px;
+    font-family: 'Montserrat', sans-serif; 
+}
 
 .hero-img {
     width: 100%;
@@ -193,7 +212,7 @@ p { font-size: 2rem; text-align: center; max-width: 800px;font-family: 'Montserr
     border: 1px solid #ffffff;
     width: 100%;
     margin-top: 40px;
-    style="text-align: center; margin: 40px auto; max-width: 700px;">
+    text-align: center;
 }
 
 .rhyme-line {
@@ -204,7 +223,7 @@ p { font-size: 2rem; text-align: center; max-width: 800px;font-family: 'Montserr
 
 .rhyme-line:hover {
     color: #6a3674;
-    transform: scale(.05);
+    transform: scale(1.05);
 }
 
 .scale-comparison-box {
@@ -219,15 +238,15 @@ p { font-size: 2rem; text-align: center; max-width: 800px;font-family: 'Montserr
 .comparison-item {
     display: flex;
     flex-direction: column;
-    align-items: center;     
+    align-items: center;    
     text-align: center;
 }
-
 
 .comparison-item img {
     margin-bottom: 10px;
     display: block;          
 }
+
 @media screen and (min-width: 900px) {
     .quick-facts {
         flex-direction: row;   
