@@ -22,7 +22,7 @@ body {
     line-height: 1.6;
     background-color: #0b0d17;
     background-image: linear-gradient(rgba(11, 20, 40, 0.8), rgba(11, 20, 40, 0.8)), 
-                      url('images/dithered_jwst.webp') !important;
+                      url('dithered_jwst.webp') !important;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -40,7 +40,7 @@ body {
 }
 
 header {
-    background-image: url('../images/phangsdither.webp');
+    background-image: url('phangsdither.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
