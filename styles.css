@@ -1,36 +1,77 @@
+/* --- 1. Global Setup --- */
 html {
     box-sizing: border-box;
-    font-size: 62.5%; 
+    font-size: 62.5%; /* 1rem = 10px */
 }
 
-*, *::before, *::after {
-    box-sizing: inherit;
-}
+*, *::before, *::after { box-sizing: inherit; }
 
 body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
     font-family: 'Helvetica', Arial, sans-serif;
-    color: #6d83b2;
+    color: #d2e0ff;
     line-height: 1.6;
     background-color: #0b0d17;
-    background-image: linear-gradient(rgba(128, 165, 245, 0.558), rgba(11, 20, 40, 0.8)), 
+    background-image: linear-gradient(rgba(11, 20, 40, 0.8), rgba(11, 20, 40, 0.8)), 
                       url('dithered_jwst.webp') !important;
     background-size: cover;
     background-attachment: fixed;
-    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
 }
 
+/* --- 2. Main Layout Wrapper --- */
+.wrapper {
+    width: 100%;
+    max-width: 1100px;
+    background: rgba(0, 0, 0, 0.4);
+}
 
+.main-header {
+    text-align: center;
+    padding: 60px 20px;
+    background-image: url('phangsdither.webp');
+    background-size: cover;
+}
+
+.main-header h1 {
+    font-family: 'IM Fell Great Primer', serif;
+    font-size: 5rem;
+    color: #fff;
+    margin: 0;
+}
+
+/* --- 3. Navigation & Rocket --- */
 .mission-control {
     width: 100%;
     background: rgba(11, 13, 23, 0.95);
     padding: 20px 0;
-    position: relative;
-    border-bottom: 2px solid #cb0505; 
+    border-bottom: 2px solid #cb0505;
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav-item:hover, .nav-item.active { color: #4c91ff; }
 
 .flight-path-container {
     width: 100%;
@@ -44,287 +85,72 @@ body {
     position: absolute;
     height: 100%;
     background: linear-gradient(90deg, #ff15b1, #4c91ff);
-    transition: width 1s ease-in-out;
 }
 
 .rocket-icon {
     position: absolute;
     top: -12px;
     font-size: 20px;
-    transition: left 1s ease-in-out;
 }
 
-.nav-links {
-    list-style: none; 
-    display: flex;   
+/* --- 4. Centering Content --- */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* THIS CENTERS EVERYTHING */
+    padding: 40px 0;
+}
+
+.hero-image-wrapper {
+    display: flex;
     justify-content: center;
-    gap: 15px;
-    margin: 0;
-    padding: 0;
+    width: 100%;
+    margin: 30px 0;
 }
 
-.nav-item {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
+.hero-img {
+    max-width: 100%;
+    width: 700px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
 }
 
-.nav-item:hover, .nav-item.active {
-    color: #4c91ff;
+.content-block { text-align: center; margin-bottom: 50px; }
+
+h1, h2 { font-family: 'IM Fell Great Primer', serif; font-size: 4rem; color: #fff; }
+
+p { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; text-align: center; }
+
+/* --- 5. Quick Facts Grid --- */
+.quick-facts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
 }
 
-.dropdown-container {
-    position: relative;
+.fact-box {
+    flex: 1 1 280px;
+    background: rgba(22, 27, 34, 0.8);
+    border: 1px solid #6a3674;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
 }
 
+/* --- 6. Dropdown --- */
+.dropdown-container { position: relative; }
 .dropdown-menu {
     display: none;
     position: absolute;
     top: 100%;
     right: 0;
-    background: rgba(11, 13, 23, 0.98);
-    border: 1px solid #cb0505;
-    border-radius: 4px;
-    list-style: none;
-    padding: 10px 0;
-    min-width: 180px;
-    z-index: 1005;
-}
-
-.dropdown-container:hover .dropdown-menu {
-    display: block;
-}
-
-.dropdown-menu li a {
-    color: #ffffff;
-    text-decoration: none;
-    display: block;
-    padding: 8px 20px;
-    font-size: 1.2rem;
-}
-
-.dropdown-menu li a:hover {
-    background: rgba(76, 145, 255, 0.2);
-}
-
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 0;
-}
-
-.about-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.specialist-tag {
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 1.6rem;
-}
-
-.profile-text {
-    max-width: 800px;
-    text-align: center;
-    background: rgba(22, 27, 34, 0.6);
-    padding: 30px;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 40px;
-}
-
-.portfolio-frame-container {
-    width: 100%;
-    height: 80vh;
-    border: 2px solid #000000;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 0 30px rgba(249, 254, 255, 0.2);
-    margin: 40px 0;
-    background-color: #000000;
-}
-
-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-.skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.skill-tag {
-    background: rgba(0, 212, 255, 0.1);
-    border: 1px solid #000000;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #00d4ff;
-}
-
-.signal-console {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-    width: 90%;
-    max-width: 1000px;
-    margin: 80px auto;
-    padding: 50px;
-    background: rgba(22, 27, 34, 0.6);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    align-items: flex-start;
-}
-
-.console-briefing {
-    flex: 1 1 350px;
-    text-align: left;
-}
-
-.console-briefing h2 {
-    font-size: 3rem;
-    color: #ffffff;
-    margin-bottom: 20px;
-    text-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
-}
-
-.console-subtitle {
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 1.4rem;
-    margin-bottom: 25px;
-}
-
-.console-text {
-    font-size: 1.1rem;
-    color: #f0f0f0;
-    line-height: 1.8;
-}
-
-.console-interface {
-    flex: 2 1 450px;
-    background: #1a1c2c;
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.input-row {
-    display: flex;
-    gap: 20px;
-}
-
-.input-row .input-group {
-    flex: 1;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.input-group label {
-    font-size: 0.85rem;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.input-group input, 
-.input-group textarea {
     background: #0b0d17;
-    border: 1px solid #30363d;
-    border-radius: 8px;
-    padding: 15px;
-    color: #fff;
-    font-size: 1.2rem;
-    outline: none;
-    transition: 0.3s;
+    border: 1px solid #cb0505;
+    padding: 10px;
+    list-style: none;
 }
-
-.submit-btn {
-    background: #00d4ff;
-    color: #0b0d17;
-    border: none;
-    padding: 18px;
-    border-radius: 8px;
-    font-size: 1.4rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    text-transform: uppercase;
-}
-
-.submit-btn:hover {
-    background: #9d00ff;
-    box-shadow: 0 0 25px rgba(157, 0, 255, 0.5);
-    transform: translateY(-3px);
-}
-
-.linkedin-link-btn {
-    display: inline-block;
-    background-color: #64d4ff; 
-    color: #0b0d17;           
-    text-decoration: none;    
-    padding: 15px 35px;       
-    border-radius: 10px;      
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    margin-top: 20px;
-}
-
-.linkedin-link-btn:hover {
-    background-color: #ffcc00; 
-    box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
-    transform: translateY(-3px);
-}
-
-.about-footer {
-    text-align: center;
-    padding: 40px;
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .signal-console {
-        padding: 30px;
-        flex-direction: column;
-    }
-    
-    .console-briefing {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-    
-    .input-row {
-        flex-direction: column;
-    }
-}
+.dropdown-container:hover .dropdown-menu { display: block; }
