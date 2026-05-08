@@ -3,28 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Launchpad | Solar System Mission</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
+    <title>Galactic Gallery | Solar System</title>
+    <link rel="stylesheet" href="style.css"> </head>
 <body class="hero-background">
 
-    <div class="wrapper">
-        <header class="main-header">
-            <div class="logo"> 
-                <h1>Space Adventure</h1>
-            </div>
-        </header> 
-
+    <header>
         <nav class="mission-control">
-            <div class="flight-path-container">
-                <div class="stars-line" style="width: 0%;"></div>
-                <div class="rocket-icon" style="left: 0%;">🚀</div>
-            </div>
             <ul class="nav-links">
-                <li><a href="index.html" class="nav-item active">Launchpad</a></li>
+                <li><a href="index.html" class="nav-item">Launchpad</a></li>
                 <li><a href="mercury.html" class="nav-item">Mercury</a></li>
                 <li><a href="venus.html" class="nav-item">Venus</a></li>
                 <li><a href="earth.html" class="nav-item">Earth</a></li>
@@ -34,48 +20,37 @@
                 <li><a href="uranus.html" class="nav-item">Uranus</a></li>
                 <li><a href="neptune.html" class="nav-item">Neptune</a></li>
                 <li class="dropdown-container">
-                    <a href="#" class="nav-item">Extras!▾</a>
+                    <a href="#" class="nav-item active">Extras! ▾</a>
                     <ul class="dropdown-menu">
                         <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="about.html">About Me</a></li>
-                        <li><a href="complete.html">Mission Complete Badge!</a></li>
+                        <li><a href="complete.html">Mission Complete!</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
 
-        <div class="container">
-            <section class="content-block">
-                <h1>Mission Briefing: The Solar System</h1>
-                <p>Ready to explore the 8 planets in our Milky Way galaxy?</p>
-                <div class="hero-image-wrapper">
-                    <img src="images/full-solar-system.webp" alt="Solar System" class="hero-img">
-                </div>
-            </section>
+        <h1 style="margin-top: 40px;">Galactic Gallery from our Solar System</h1>
+        <p>A visual log of the planetary bodies explored in this mission.</p>
+    </header>
 
-            <section class="content-block">
-                <h1>Introduction</h1>
-                <p>Our solar system is located inside the Milky Way, a spiral galaxy with a sun, eight planets, and more! Please read on to learn more!</p>
-            </section>
-
-            <div class="quick-facts">
-                <div class="fact-box"><h3>Origin</h3><p>Formed 4.6 billion years ago from a solar nebula.</p></div>
-                <div class="fact-box"><h3>Structure</h3><p>Includes 4 inner and 4 outer planets.</p></div>
-                <div class="fact-box"><h3>Home</h3><p>Located in the Milky Way galaxy!</p></div>
-            </div>
-
-            <section class="mission-rhyme">
-                <h2>The Explorer's Chant</h2>
-                <p>
-                    <span class="rhyme-line"><strong>Amazing Mercury</strong> is closest to the Sun...</span>
-                </p>
-                <a href="https://www.Nasa.com" class="nasa-source">Sourced from NASA. Click here to visit!</a>
-            </section>
+    <div class="container">
+        <div class="photo-grid">
+            <div class="grid-item"><img src="images/mercury.webp" alt="Mercury"><h3>Mercury</h3></div>
+            <div class="grid-item"><img src="images/venus.webp" alt="Venus"><h3>Venus</h3></div>
+            <div class="grid-item"><img src="images/earth.webp" alt="Earth"><h3>Earth</h3></div>
+            <div class="grid-item"><img src="images/mars.webp" alt="Mars"><h3>Mars</h3></div>
+            <div class="grid-item"><img src="images/jupiter.webp" alt="Jupiter"><h3>Jupiter</h3></div>
+            <div class="grid-item"><img src="images/saturn.webp" alt="Saturn"><h3>Saturn</h3></div>
+            <div class="grid-item"><img src="images/uranus.webp" alt="Uranus"><h3>Uranus</h3></div>
+            <div class="grid-item"><img src="images/neptune.webp" alt="Neptune"><h3>Neptune</h3></div>
         </div>
-
-        <footer class="main-footer">
-            <p>Samantha Ortiz | Midterm Project 2026</p>
-        </footer>
     </div>
+
+    <footer style="text-align: center; padding: 40px;">
+        <a href="https://www.nasa.gov" style="color: #00d4ff;">Photos sourced from NASA. Click here to visit!</a>
+        <br><br>
+        <a href="index.html" class="back-text">← Back to Launchpad</a>
+    </footer>
 </body>
 </html>
