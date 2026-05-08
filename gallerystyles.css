@@ -1,68 +1,81 @@
-html {
-    box-sizing: border-box;
-    font-size: 62.5%;
-    height: 100vh;
-}
+/* --- Keep all your existing code above, then add these specific nav rules --- */
 
-*, *::before, *::after {
-    box-sizing: inherit;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Helvetica', Arial, sans-serif;
-    color: #6d83b2;
-    line-height: 1.6;
-    background-color: #0b0d17;
-    background-image: linear-gradient(rgba(11, 20, 40, 0.8), rgba(11, 20, 40, 0.8)), 
-                      url('dithered_jwst.png') !important;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    overflow-x: hidden; 
-}
-
-.wrapper {
-    min-width: 425px;
-    max-width: 1000px;
-    margin: 0px auto;
-    background-color: rgb(0, 0, 0);
-    display: grid;
-    overflow: auto;
-    height: 100vh;
-}
-
-.photo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+.mission-control {
     width: 100%;
-    max-width: 1000px;
-    padding: 20px;
-    margin: 0 auto;
+    background: rgba(11, 13, 23, 0.95);
+    padding: 20px 0;
+    border-bottom: 2px solid #cb0505;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
-.grid-item {
-    background: rgba(22, 27, 34, 0.8);
+.nav-links {
+    list-style: none; /* REMOVES THE BLUE BULLETS */
+    display: flex;    /* PUTS LINKS IN A ROW */
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: #4c91ff;
+}
+
+/* --- Dropdown Logic --- */
+.dropdown-container {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none; /* HIDDEN BY DEFAULT */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(11, 13, 23, 0.98);
     border: 1px solid #870451;
-    border-radius: 15px;
-    padding: 15px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    overflow: hidden;
+    border-radius: 8px;
+    padding: 10px 0;
+    list-style: none;
+    min-width: 180px;
+    z-index: 1005;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
-.grid-item:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
-    border-color: #ffffff;
+.dropdown-container:hover .dropdown-menu {
+    display: block; /* SHOWS ON HOVER */
 }
 
+.dropdown-menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+.dropdown-menu li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #00d4ff;
+}
+
+.back-text {
+    color: #ffffff;
+    font-size: 1.4rem;
+    text-decoration: none;
+}
 .grid-item img {
     width: 100%;
     height: auto; 
