@@ -8,24 +8,17 @@ html {
     box-sizing: inherit;
 }
 
-
 body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: block; /* Changed from flex to block to allow nav to span top */
     font-family: 'Helvetica', Arial, sans-serif;
-    color: #6d83b2;
-    line-height: 1.6;
     background-color: #0b0d17;
     background-image: linear-gradient(rgba(11, 20, 40, 0.8), rgba(11, 20, 40, 0.8)), 
                       url('dithered_jwst.webp') !important;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    overflow-x: hidden; 
 }
 
 .wrapper {
@@ -37,12 +30,14 @@ body {
     overflow: auto;
     height: 100vh;
 }
+
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
-    max-width: 1000px;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -63,10 +58,11 @@ body {
 
 .grid-item img {
     width: 100%;
-    height: 200px;
-    object-fit: center; 
+    height: 250px; 
+    object-fit: cover; 
     display: block;
 }
+
 
 .grid-item h3 {
     padding: 10px;
@@ -74,8 +70,25 @@ body {
    
 }
 
+.nav-links {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+}
+
 h1 { font-size: 4rem; color: #fff; text-align: center; margin-bottom: 10px;
     font-family: 'IM Fell Great Primer', serif;
     font-weight: 100;
 }
 h2 { font-size: 2rem; text-align: center; max-width: 800px;font-family: 'Montserrat', sans-serif; }
+
+
+
+
+
+
+
+
+
+
