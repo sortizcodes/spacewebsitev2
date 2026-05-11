@@ -1,7 +1,6 @@
 html {
     box-sizing: border-box;
-    font-size: 62.5%; 
-    height: 100%;
+    font-size: 62.5%;
 }
 
 *, *::before, *::after {
@@ -12,66 +11,45 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    display: block; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: 'Helvetica', Arial, sans-serif;
     color: #6d83b2;
     line-height: 1.6;
     background-color: #0b0d17;
     background-image: linear-gradient(rgba(11, 20, 40, 0.8), rgba(11, 20, 40, 0.8)), 
-                      url('dithered_jwst.webp') !important;
+                      url('dithered_jwst.png') !important;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    overflow-x: hidden; 
 }
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    padding: 20px 0;
-    margin: 0;
-}
-
-h1 { 
-    font-size: 4rem; 
-    color: #fff; 
-    text-align: center; 
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-family: 'IM Fell Great Primer', serif;
-    font-weight: 100;
-}
-
-h3 {
-    font-size: 1.8rem;
-    color: #6d83b2;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 30px;
+ 
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 0;
 }
 
 .photo-grid {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important; 
     gap: 20px;
-    padding: 20px;
-    width: 90%;
-    max-width: 1000px;
-    margin: 0 auto;
+    margin-top: 20px;
 }
 
 .grid-item {
     background: #10298556;
-    border: 1px solid #b114146e;
-    border-radius: 12px;
+    border: 2px solid #b114146e;
+    border-radius: 10px;
     overflow: hidden;
     text-align: center;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .grid-item:hover {
-    transform: translateY(-8px);
+    transform: scale(1.05);
     border-color: #ffffff;
 }
 
@@ -83,18 +61,25 @@ h3 {
 }
 
 .grid-item h1 {
-    font-size: 1.8rem; 
-    padding: 10px 0;
+    padding: 10px;
+    font-size: 1.6rem !important;
     margin: 0;
     color: #fff;
 }
 
-footer {
-    text-align: center;
-    padding: 40px 0;
+h1 { 
+    font-size: 4rem; 
+    color: #fff; 
+    text-align: center; 
+    font-family: 'IM Fell Great Primer', serif;
 }
 
-button {
-    background-color: transparent;
-    border: 1px solid #6d83b2;
-    color: #fff;
+h3 {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+footer {
+    padding: 40px;
+    text-align: center;
+}
