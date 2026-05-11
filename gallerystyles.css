@@ -1,7 +1,7 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;
-     height: 100vh;
+    height: 100vh;
 }
 
 *, *::before, *::after {
@@ -10,55 +10,72 @@ html {
 
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  line-height: 1.6;
-  background-color: #0b0d17;
-  background-image: linear-gradient(rgba(11, 20, 40, 0.8), rgba(11, 20, 40, 0.8)), 
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Helvetica', Arial, sans-serif;
+    color: #6d83b2;
+    line-height: 1.6;
+    background-color: #0b0d17;
+    background-image: linear-gradient(rgba(11, 20, 40, 0.8), rgba(11, 20, 40, 0.8)), 
                       url('dithered_jwst.png') !important;
-  background-size: cover;
-  background-position: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden; 
 }
 
-.gallery {
-  --size: 100px;
-  display: grid;
-  grid-template-columns: repeat(6, var(--size));
-  grid-auto-rows: var(--size);
-  margin-bottom: var(--size);
-  place-items: start center;
-  gap: 5px;
-  
-  &:has(:hover) img:not(:hover),
-  &:has(:focus) img:not(:focus){
-    filter: brightness(0.5) contrast(0.5);
-  }
-
-  & img {
-    object-fit: cover;
-    width: calc(var(--size) * 2);
-    height: calc(var(--size) * 2);
-    clip-path: path("M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z");
-    transition: clip-path 0.25s, filter 0.75s;
-    grid-column: auto / span 2;
-    border-radius: 5px;
-
-    &:nth-child(5n - 1) { 
-      grid-column: 2 / span 2 
-    }
-
-    &:hover,
-    &:focus {
-      clip-path: path("M0,0 C0,0 200,0 200,0 200,0 200,100 200,100 200,100 200,200 200,200 200,200 100,200 100,200 100,200 100,200 0,200 0,200 0,100 0,100 0,100 0,100 0,100Z");
-      z-index: 1;
-      transition: clip-path 0.25s, filter 0.25s;
-    }
-    
-    &:focus {
-      outline: 1px dashed black;
-      outline-offset: -5px;
-    }
-  }
+.wrapper {
+    min-width: 425px;
+    max-width: 1000px;
+    margin: 0px auto;
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    overflow: auto;
+    height: 100vh;
 }
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    background:  #10298556;
+    border: 2px solid #b114146e;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+
+.grid-item:hover {
+    transform: scale(1.05);
+    border-color: #ffffff;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: center; 
+    display: block;
+}
+
+.grid-item h3 {
+    padding: 10px;
+    font-size: 1.2rem;
+   
+}
+
+h1 { font-size: 4rem; color: #fff; text-align: center; margin-bottom: 10px;
+    font-family: 'IM Fell Great Primer', serif;
+    font-weight: 100;
+}
+h2 { font-size: 2rem; text-align: center; max-width: 800px;font-family: 'Montserrat', sans-serif; }
