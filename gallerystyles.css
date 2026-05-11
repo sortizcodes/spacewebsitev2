@@ -21,7 +21,7 @@ body {
     line-height: 1.6;
     background-color: #0b0d17;
     background-image: linear-gradient(rgba(11, 20, 40, 0.8), rgba(11, 20, 40, 0.8)), 
-                      url('dithered_jwst.png') !important;
+                      url('dithered_jwst.webp') !important;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
