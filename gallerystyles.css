@@ -33,11 +33,11 @@ body {
 
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
     padding: 20px;
     width: 90%;
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -58,9 +58,9 @@ body {
 
 .grid-item img {
     width: 100%;
-    height: 250px; 
-    object-fit: cover; 
-    display: block;
+    height: auto; 
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
 }
 
 
