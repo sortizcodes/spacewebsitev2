@@ -1,6 +1,7 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;
+     height: 100vh;
 }
 
 *, *::before, *::after {
@@ -23,6 +24,17 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    min-width: 425px;
+    max-width: 1000px;
+    margin: 0px auto;
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    overflow: auto;
+    height: 100vh;
 }
  
 .container {
